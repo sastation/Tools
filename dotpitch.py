@@ -51,7 +51,7 @@ if __name__ == '__main__':
     screen.Caculate(screensize, xpixel, ypixel)
     
     print "Screen Ratio: %s" % screen.ScreenRatio
-    print "Dot Pitch: %.2f" % screen.xDotPitch
+    print "Dot Pitch: %.4f mm" % screen.xDotPitch
     print "X Size: %.1f inch" % screen.xSize
     print "Y Size: %.1f inch" % screen.ySize
     
