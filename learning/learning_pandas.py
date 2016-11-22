@@ -17,10 +17,12 @@ df = pd.DataFrame(di)
 ## 从 csv 文件中生成列表
 f_csv = './test.csv'
 df = pd.read_csv(f_csv)
+### df.to_csv('foo.csv') #写入csv文件
 
 ## 从 excel 中读取列表
 f_xls = ExcelFile('test.xlsx')
 f_xls.parse('sheet1', index_col=None, na_values=['NA'])
+### df.to_excel('foo.xlsx', sheet_name='sheet1') #写入excel文件
 
 # 转换
 df.to_dict(outtype='dict') # outtype = [dict|list|series|records]
@@ -31,14 +33,16 @@ df.tail()
 df.index
 df.columns
 df.values
+df.dtypes
 df.describe() #decribe方法可以计算各个列的基本描述统计值。包含计数，平均数，标准差，最大值，最小值及4分位差。
 
 # 行列转换
 df.T
 
 # 排序
-df.sort_index(axis=1, ascending=False)
-df.sort(columns=['a', 'b'], ascending=[0,1])
+df.sort_values(['a', 'b']) # Sort by the values along either axis
+df.sort_index(axis=1, ascending=False) # Sort object by labels (along an axis)
+df.sort(columns=['a', 'b'], ascending=[0,1]) # DEPRECATED: use DataFrame.sort_values()
 
 cols = df.columns
 ## df.loc 只可以通过行列标签进行查询
@@ -81,3 +85,11 @@ for col, list in df.iteritems():
     print
 
 # 筛选
+df.['b']
+df.b
+df[0:3]
+df[0:]
+df[df.b>=0.5]
+df.c.max()
+df.c.min()
+
