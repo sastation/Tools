@@ -8,11 +8,11 @@ fi
 
 /etc/init.d/denyhosts stop
 echo '
-/var/lib/denyhosts/hosts
-/var/lib/denyhosts/hosts-restricted
-/var/lib/denyhosts/hosts-root
-/var/lib/denyhosts/hosts-valid
-/var/lib/denyhosts/users-hosts
+/usr/share/denyhosts/data/hosts
+/usr/share/denyhosts/data/hosts-restricted
+/usr/share/denyhosts/data/hosts-root
+/usr/share/denyhosts/data/hosts-valid
+/usr/share/denyhosts/data/users-hosts
 /etc/hosts.deny
 ' | grep -v "^$" | xargs sed -i "/$1/d"
 /etc/init.d/denyhosts start
