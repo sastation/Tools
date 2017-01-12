@@ -13,7 +13,7 @@ fqdns=(
 fqdns=(
 "wzxy.wangzhihai.net"
 "news.sina.com.cn"
-"fakedns.163.com"
+"fakedns.10086.cn"
 )
 
 ns_svrs=(
@@ -37,10 +37,10 @@ ns_svrs=(
 "OneDNS:112.124.47.27"
 "OpenDNS:208.67.222.222"
 "OpenDNS:208.67.220.220"
-"UltraDNS:156.154.70.1"
-"UltraDNS:156.154.71.1"
-"Norton:119.85.126.10"
-"Norton:199.85.127.10"
+#"UltraDNS:156.154.70.1"
+#"UltraDNS:156.154.71.1"
+#"Norton:119.85.126.10"
+#"Norton:199.85.127.10"
 "Google:8.8.4.4"
 "Google:8.8.8.8"
 )
@@ -70,6 +70,7 @@ function scan {
         ns_svr=${arrNS[1]}
         #echo $ns_dsc, $ns_svr
         verify
+        echo
     done
 }
 
