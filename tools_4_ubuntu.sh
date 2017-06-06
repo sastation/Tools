@@ -9,3 +9,10 @@ dpkg-query --show --showformat='${Package;-50}\t${Installed-Size}\n' | sort -k 2
 
 # query faild login via sshd
 sudo cat /var/log/auth.log | grep -ia sshd | grep -ia Failed
+
+# cpu stress testing
+## 1.
+cat /dev/urandom | md5sum
+
+## 2. 计算圆周率
+echo "scale=5000; 4*a(1)" | bc -l -q
