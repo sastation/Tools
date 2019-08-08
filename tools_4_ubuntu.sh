@@ -21,3 +21,6 @@ echo "scale=5000; 4*a(1)" | bc -l -q
 # Create large file
 dd if=/dev/urandom of=test.bin bs=10M count=20
 #! fallocate -l 200M test.bin
+
+# cut journal log size
+journalctl --vacuum-size=500M
