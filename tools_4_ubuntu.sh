@@ -23,4 +23,6 @@ dd if=/dev/urandom of=test.bin bs=10M count=20
 #! fallocate -l 200M test.bin
 
 # cut journal log size
-journalctl --vacuum-size=500M
+journalctl --disk-usage
+journalctl --vacuum-size=50M
+journalctl --vacuum-time=3d
