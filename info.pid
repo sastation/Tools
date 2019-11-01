@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# get command info from PID
+
+if [ "x"${1} == "x" ]
+then
+    echo "Please provider PID"
+    exit -1
+else
+    PID=${1}
+fi
+
+DIR="/proc/"${PID}
+
+echo -n "CMD All: "
+cat ${DIR}/cmdline
+echo
+
+echo -n "ENV dir: "
+readlink -f ${DIR}/cwd
+echo -n "CMD dir: "
+readlink -f ${DIR}/exe
