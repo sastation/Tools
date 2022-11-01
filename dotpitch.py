@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #coding: utf-8
 
 # dotpitch: caculate screen dotpitch
@@ -40,18 +40,18 @@ class DotPitch:
 
 
 if __name__ == '__main__':
-    print "Screen size:",
+    print("Screen size:", end="")
     screensize = input()
-    print "X-Pixel:",
+    print("X-Pixel:", end="")
     xpixel = input()
-    print "Y-Pixel:",
+    print("Y-Pixel:", end="")
     ypixel = input()
 
     screen = DotPitch()
     screen.Caculate(screensize, xpixel, ypixel)
     
-    print "Screen Ratio: %s" % screen.ScreenRatio
-    print "Dot Pitch: %.4f mm" % screen.xDotPitch
-    print "X Size: %.1f inch" % screen.xSize
-    print "Y Size: %.1f inch" % screen.ySize
+    print("Screen Ratio: %s" % screen.ScreenRatio)
+    print("Dot Pitch: %.4f mm" % screen.xDotPitch)
+    print("X Size: %.1f inch" % screen.xSize)
+    print("Y Size: %.1f inch" % screen.ySize)
     
